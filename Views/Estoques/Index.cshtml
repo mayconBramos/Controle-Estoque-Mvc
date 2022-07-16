@@ -1,0 +1,93 @@
+﻿@model IEnumerable<ControleEstoque.Models.Estoque>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if(TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        <button type="button"  class="btn btn-danger btn-sm close-alert" aria-label="Cose">X</button> 
+        @TempData["MensagemSucesso"];
+    </div>
+}
+
+@if(TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+    <button type="button"  class="btn btn-danger btn-sm close-alert" aria-label="Cose">X</button>
+    @TempData["MensagemErro"];
+</div>
+
+}
+
+
+<h1 class="text-center">Produtos no estoque</h1>
+
+<p>
+    <a role="button" class="btn col-12 text-white" asp-action="Create" style="background-color: #7b67eb"><strong>Adicionar Produto</strong> </a>
+</p>
+<hr />
+
+<table class="table" id="tabela_produtos">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Lote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeProduto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recebimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Validade)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeProduto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Recebimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Validade)
+            </td>
+            <td>
+                <a role="button" class="btn btn-outline-primary px-2 py-1" asp-action="Edit" asp-route-id="@item.Id">Editar</a> 
+                <a role="button" class="btn btn-outline-danger  px-2 py-1"asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts{
+    <script>
+        $(document).ready( function () {
+
+            $('#tabela_produtos').DataTable({
+
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+                }
+
+            }); 
+                
+    } );
+    </script>
+}
