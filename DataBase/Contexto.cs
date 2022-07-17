@@ -13,5 +13,11 @@ namespace GestaoEstoque.DataBase
 
         //Criando tabela
         public DbSet<Estoque> Estoque { get; set; }
+
+        //Criando tabela
+        public DbSet<ControleEstoque.Models.Entrada>? Entrada { get; set; }
+
+        //Criando tabela
+        public DbSet<ControleEstoque.Models.Saida>? Saida { get; set; }
     }
 }

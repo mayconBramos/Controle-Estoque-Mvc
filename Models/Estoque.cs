@@ -6,8 +6,6 @@ namespace ControleEstoque.Models
     [Table("Estoque")]
     public class Estoque
     {
-        
-        
 
             [Column("Id")]
             [Display(Name = "Id")]

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Academia-NET\\Desafio_Avaliativos\\ControleEstoque\\ControleEstoque.csproj": {}
+    "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Portifolio Github\\Controle-Estoque-Mvc\\ControleEstoque.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Academia-NET\\Desafio_Avaliativos\\ControleEstoque\\ControleEstoque.csproj": {
+    "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Portifolio Github\\Controle-Estoque-Mvc\\ControleEstoque.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Academia-NET\\Desafio_Avaliativos\\ControleEstoque\\ControleEstoque.csproj",
+        "projectUniqueName": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Portifolio Github\\Controle-Estoque-Mvc\\ControleEstoque.csproj",
         "projectName": "ControleEstoque",
-        "projectPath": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Academia-NET\\Desafio_Avaliativos\\ControleEstoque\\ControleEstoque.csproj",
+        "projectPath": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Portifolio Github\\Controle-Estoque-Mvc\\ControleEstoque.csproj",
         "packagesPath": "C:\\Users\\mbrun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Academia-NET\\Desafio_Avaliativos\\ControleEstoque\\obj\\",
+        "outputPath": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Portifolio Github\\Controle-Estoque-Mvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mbrun\\AppData\\Roaming\\NuGet\\NuGet.Config",

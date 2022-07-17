@@ -56,13 +56,14 @@ namespace ControleEstoque.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Estoque estoque)
+        public async Task<IActionResult> Create([Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Estoque estoque,Entrada entrada)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     _context.Add(estoque);
+                    _context.Add(entrada);
                     await _context.SaveChangesAsync();
                     TempData["MensagemSucesso"] = "Produto cadastrado com sucesso!";
                     return RedirectToAction(nameof(Index));
@@ -190,6 +191,49 @@ namespace ControleEstoque.Controllers
         private bool EstoqueExists(int id)
         {
           return (_context.Estoque?.Any(e => e.Id == id)).GetValueOrDefault();
+        }
+
+        public async Task<IActionResult> Sobra(int id, [Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Estoque estoque)
+        {
+            try
+            {
+                if (id != estoque.Id)
+                {
+                    return NotFound();
+                }
+
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        _context.Update(estoque);
+                        await _context.SaveChangesAsync();
+
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+                        if (!EstoqueExists(estoque.Id))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+
+                            throw;
+                        }
+                    }
+                    TempData["MensagemSucesso"] = "Produto atualizado com sucesso!";
+                    return RedirectToAction(nameof(Index));
+                }
+
+                return View(estoque);
+            }
+            catch (Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops,teve um erro ao atualizar o produto,tente novamente!{erro.Message}";
+                return RedirectToAction(nameof(Index));
+            }
+
         }
     }
 }
