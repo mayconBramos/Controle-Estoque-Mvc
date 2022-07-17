@@ -99,32 +99,45 @@ namespace ControleEstoque.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Estoque estoque)
         {
-            if (id != estoque.Id)
+            try
             {
-                return NotFound();
-            }
+                if (id != estoque.Id)
+                {
+                    return NotFound();
+                }
 
-            if (ModelState.IsValid)
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        _context.Update(estoque);
+                        await _context.SaveChangesAsync();
+                        
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+                        if (!EstoqueExists(estoque.Id))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            
+                            throw;
+                        }
+                    }
+                    TempData["MensagemSucesso"] = "Produto atualizado com sucesso!";
+                    return RedirectToAction(nameof(Index));
+                }
+                
+                return View(estoque);
+            }
+            catch (Exception erro)
             {
-                try
-                {
-                    _context.Update(estoque);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!EstoqueExists(estoque.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                TempData["MensagemErro"] = $"Ops,teve um erro ao atualizar o produto,tente novamente!{erro.Message}";
                 return RedirectToAction(nameof(Index));
             }
-            return View(estoque);
+            
         }
 
         // GET: Estoques/Delete/5
@@ -150,18 +163,28 @@ namespace ControleEstoque.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Estoque == null)
+            try
             {
-                return Problem("Entity set 'Contexto.Estoque'  is null.");
+                if (_context.Estoque == null)
+                {
+                    return Problem("Entity set 'Contexto.Estoque'  is null.");
+                }
+                var estoque = await _context.Estoque.FindAsync(id);
+                if (estoque != null)
+                {
+                    _context.Estoque.Remove(estoque);
+                }
+
+                await _context.SaveChangesAsync();
+                TempData["MensagemSucesso"] = "Produto apagado com sucesso!";
+                return RedirectToAction(nameof(Index));
             }
-            var estoque = await _context.Estoque.FindAsync(id);
-            if (estoque != null)
+            catch(Exception erro)
             {
-                _context.Estoque.Remove(estoque);
+                TempData["MensagemErro"] = $"Ops,teve um erro ao apagar o produto,tente novamente!{erro.Message}";
+
+                return RedirectToAction(nameof(Index));
             }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
         }
 
         private bool EstoqueExists(int id)
