@@ -1,6 +1,5 @@
 using GestaoEstoque.DataBase;
 using Microsoft.EntityFrameworkCore;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,9 +7,10 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<Contexto>
     (options => options.UseSqlServer
-    ("Data Source=DESKTOP-S31O0OO\\SQLEXPRESS;Initial Catalog=ControleEstoque_db;Integrated Security=True"));
+    ("Data Source=DESKTOP-S31O0OO\\SQLEXPRESS;Initial Catalog=Estoque_Mvc_db;Integrated Security=True"));
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

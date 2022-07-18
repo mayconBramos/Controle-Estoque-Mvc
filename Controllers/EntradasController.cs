@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ControleEstoque.Models;
+using Controle_Estoque_Mvc.Models;
 using GestaoEstoque.DataBase;
 
-namespace ControleEstoque.Controllers
+namespace Controle_Estoque_Mvc.Controllers
 {
     public class EntradasController : Controller
     {
@@ -56,7 +56,7 @@ namespace ControleEstoque.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Retirada,Validade")] Entrada entrada,Estoque estoque)
+        public async Task<IActionResult> Create([Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Entrada entrada, Estoque estoque)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace ControleEstoque.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Retirada,Validade")] Entrada entrada)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Entrada entrada)
         {
             if (id != entrada.Id)
             {
@@ -147,9 +147,11 @@ namespace ControleEstoque.Controllers
                 return Problem("Entity set 'Contexto.Entrada'  is null.");
             }
             var entrada = await _context.Entrada.FindAsync(id);
+            var estoque = await _context.Estoque.FindAsync(id);
             if (entrada != null)
             {
                 _context.Entrada.Remove(entrada);
+                _context.Estoque.Remove(estoque);
             }
             
             await _context.SaveChangesAsync();

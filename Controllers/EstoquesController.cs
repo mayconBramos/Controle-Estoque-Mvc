@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ControleEstoque.Models;
+using Controle_Estoque_Mvc.Models;
 using GestaoEstoque.DataBase;
 
-namespace ControleEstoque.Controllers
+namespace Controle_Estoque_Mvc.Controllers
 {
     public class EstoquesController : Controller
     {
@@ -56,25 +56,16 @@ namespace ControleEstoque.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Estoque estoque,Entrada entrada)
+        public async Task<IActionResult> Create([Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Estoque estoque, Entrada entrada )
         {
-            try
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
-                {
-                    _context.Add(estoque);
-                    _context.Add(entrada);
-                    await _context.SaveChangesAsync();
-                    TempData["MensagemSucesso"] = "Produto cadastrado com sucesso!";
-                    return RedirectToAction(nameof(Index));
-                }
-                return View(estoque);
-            }
-            catch (Exception erro)
-            {
-                TempData["MensagemErro"] = $"Ops,teve um erro ao cadastrar o produto,tente novamente!{erro.Message}";
+                _context.Add(estoque);
+                _context.Add(entrada);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            return View(estoque);
         }
 
         // GET: Estoques/Edit/5
@@ -100,45 +91,40 @@ namespace ControleEstoque.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Estoque estoque)
         {
-            try
+            if (id != estoque.Id)
             {
-                if (id != estoque.Id)
-                {
-                    return NotFound();
-                }
-
-                if (ModelState.IsValid)
-                {
-                    try
-                    {
-                        _context.Update(estoque);
-                        await _context.SaveChangesAsync();
-                        
-                    }
-                    catch (DbUpdateConcurrencyException)
-                    {
-                        if (!EstoqueExists(estoque.Id))
-                        {
-                            return NotFound();
-                        }
-                        else
-                        {
-                            
-                            throw;
-                        }
-                    }
-                    TempData["MensagemSucesso"] = "Produto atualizado com sucesso!";
-                    return RedirectToAction(nameof(Index));
-                }
-                
-                return View(estoque);
+                return NotFound();
             }
-            catch (Exception erro)
+
+            if (ModelState.IsValid)
             {
-                TempData["MensagemErro"] = $"Ops,teve um erro ao atualizar o produto,tente novamente!{erro.Message}";
+                
+                try
+                {
+                    _context.Update(estoque);
+                    await _context.SaveChangesAsync();
+                    if (estoque.Quantidade <= 0)
+                    {
+                        _context.Remove(estoque);
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+                    }
+
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!EstoqueExists(estoque.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
                 return RedirectToAction(nameof(Index));
             }
-            
+            return View(estoque);
         }
 
         // GET: Estoques/Delete/5
@@ -164,76 +150,23 @@ namespace ControleEstoque.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            try
+            if (_context.Estoque == null)
             {
-                if (_context.Estoque == null)
-                {
-                    return Problem("Entity set 'Contexto.Estoque'  is null.");
-                }
-                var estoque = await _context.Estoque.FindAsync(id);
-                if (estoque != null)
-                {
-                    _context.Estoque.Remove(estoque);
-                }
-
-                await _context.SaveChangesAsync();
-                TempData["MensagemSucesso"] = "Produto apagado com sucesso!";
-                return RedirectToAction(nameof(Index));
+                return Problem("Entity set 'Contexto.Estoque'  is null.");
             }
-            catch(Exception erro)
+            var estoque = await _context.Estoque.FindAsync(id);
+            if (estoque != null)
             {
-                TempData["MensagemErro"] = $"Ops,teve um erro ao apagar o produto,tente novamente!{erro.Message}";
-
-                return RedirectToAction(nameof(Index));
+                _context.Estoque.Remove(estoque);
             }
+            
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         private bool EstoqueExists(int id)
         {
           return (_context.Estoque?.Any(e => e.Id == id)).GetValueOrDefault();
-        }
-
-        public async Task<IActionResult> Sobra(int id, [Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Estoque estoque)
-        {
-            try
-            {
-                if (id != estoque.Id)
-                {
-                    return NotFound();
-                }
-
-                if (ModelState.IsValid)
-                {
-                    try
-                    {
-                        _context.Update(estoque);
-                        await _context.SaveChangesAsync();
-
-                    }
-                    catch (DbUpdateConcurrencyException)
-                    {
-                        if (!EstoqueExists(estoque.Id))
-                        {
-                            return NotFound();
-                        }
-                        else
-                        {
-
-                            throw;
-                        }
-                    }
-                    TempData["MensagemSucesso"] = "Produto atualizado com sucesso!";
-                    return RedirectToAction(nameof(Index));
-                }
-
-                return View(estoque);
-            }
-            catch (Exception erro)
-            {
-                TempData["MensagemErro"] = $"Ops,teve um erro ao atualizar o produto,tente novamente!{erro.Message}";
-                return RedirectToAction(nameof(Index));
-            }
-
         }
     }
 }

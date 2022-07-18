@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace ControleEstoque.Migrations
+namespace Controle_Estoque_Mvc.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20220717030603_InclusaoTabelas")]
-    partial class InclusaoTabelas
+    [Migration("20220718143534_InicialCriacao")]
+    partial class InicialCriacao
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +24,7 @@ namespace ControleEstoque.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("ControleEstoque.Models.Entrada", b =>
+            modelBuilder.Entity("Controle_Estoque_Mvc.Models.Entrada", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -51,10 +51,6 @@ namespace ControleEstoque.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("Recebimento");
 
-                    b.Property<DateTime>("Retirada")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("Retirada");
-
                     b.Property<DateTime>("Validade")
                         .HasColumnType("datetime2")
                         .HasColumnName("Validade");
@@ -64,7 +60,7 @@ namespace ControleEstoque.Migrations
                     b.ToTable("Entrada-Estoque");
                 });
 
-            modelBuilder.Entity("ControleEstoque.Models.Estoque", b =>
+            modelBuilder.Entity("Controle_Estoque_Mvc.Models.Estoque", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -98,42 +94,6 @@ namespace ControleEstoque.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Estoque");
-                });
-
-            modelBuilder.Entity("ControleEstoque.Models.Saida", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Lote")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Lote");
-
-                    b.Property<string>("NomeProduto")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("Nome/Marca");
-
-                    b.Property<int>("Quantidade")
-                        .HasColumnType("int")
-                        .HasColumnName("Quantidade");
-
-                    b.Property<DateTime>("Retirada")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("Retirada");
-
-                    b.Property<DateTime>("Validade")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("Validade");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Saida");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,4 +1,4 @@
-﻿using ControleEstoque.Models;
+﻿using Controle_Estoque_Mvc.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace GestaoEstoque.DataBase
@@ -15,9 +15,9 @@ namespace GestaoEstoque.DataBase
         public DbSet<Estoque> Estoque { get; set; }
 
         //Criando tabela
-        public DbSet<ControleEstoque.Models.Entrada>? Entrada { get; set; }
+        public DbSet<Entrada> Entrada { get; set; }
 
-        //Criando tabela
-        public DbSet<ControleEstoque.Models.Saida>? Saida { get; set; }
+        
+
     }
 }

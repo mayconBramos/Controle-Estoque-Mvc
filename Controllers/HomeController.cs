@@ -1,8 +1,8 @@
-﻿using ControleEstoque.Models;
+﻿using Controle_Estoque_Mvc.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace ControleEstoque.Controllers
+namespace Controle_Estoque_Mvc.Controllers
 {
     public class HomeController : Controller
     {
@@ -14,6 +14,11 @@ namespace ControleEstoque.Controllers
         }
 
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
         {
             return View();
         }

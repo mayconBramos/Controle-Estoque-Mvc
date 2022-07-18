@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ControleEstoque.Migrations
+namespace Controle_Estoque_Mvc.Migrations
 {
-    public partial class InclusaoTabelas : Migration
+    public partial class InicialCriacao : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,7 +19,6 @@ namespace ControleEstoque.Migrations
                     NomeMarca = table.Column<string>(name: "Nome/Marca", type: "nvarchar(max)", nullable: false),
                     Quantidade = table.Column<int>(type: "int", nullable: false),
                     Recebimento = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Retirada = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Validade = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
@@ -28,7 +27,7 @@ namespace ControleEstoque.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Saida",
+                name: "Estoque",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -36,12 +35,12 @@ namespace ControleEstoque.Migrations
                     Lote = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NomeMarca = table.Column<string>(name: "Nome/Marca", type: "nvarchar(max)", nullable: false),
                     Quantidade = table.Column<int>(type: "int", nullable: false),
-                    Retirada = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Recebimento = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Validade = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Saida", x => x.Id);
+                    table.PrimaryKey("PK_Estoque", x => x.Id);
                 });
         }
 
@@ -51,7 +50,7 @@ namespace ControleEstoque.Migrations
                 name: "Entrada-Estoque");
 
             migrationBuilder.DropTable(
-                name: "Saida");
+                name: "Estoque");
         }
     }
 }

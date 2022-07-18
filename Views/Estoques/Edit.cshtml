@@ -1,47 +1,52 @@
-﻿@model ControleEstoque.Models.Estoque
+﻿@model Controle_Estoque_Mvc.Models.Estoque
 
 @{
     ViewData["Title"] = "Edit";
 }
 
-<h1 class="text-center ">Editar Produto</h1>
+<h1 class="text-center ">Retirar Produto</h1>
 
 <form asp-action="Edit">
+    
     <div class="row mt-4">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group col-4">
+            <div class="form-group col-4" >
                 <label asp-for="Lote" class="control-label"></label>
-                <input asp-for="Lote" class="form-control" />
+                <input asp-for="Lote" class="form-control" readonly />
                 <span asp-validation-for="Lote" class="text-danger"></span>
             </div>
             <div class="form-group col-8">
+                
                 <label asp-for="NomeProduto" class="control-label"></label>
-                <input asp-for="NomeProduto" class="form-control" />
+                 <input asp-for="NomeProduto" class="form-control" readonly />
                 <span asp-validation-for="NomeProduto" class="text-danger"></span>
+                
             </div>
     </div>
     <div class="row">
             <div class="form-group col-2">
                 <label asp-for="Quantidade" class="control-label"></label>
-                <input asp-for="Quantidade" class="form-control" />
+                <input asp-for="Quantidade"  class="form-control" id="qntd"/>
                 <span asp-validation-for="Quantidade" class="text-danger"></span>
             </div>
             <div class="form-group col-3 mx-auto">
                 <label asp-for="Recebimento" class="control-label"></label>
-                <input asp-for="Recebimento" class="form-control" />
+                <input asp-for="Recebimento" class="form-control"  readonly/>
                 <span asp-validation-for="Recebimento" class="text-danger"></span>
             </div>
             <div class="form-group col-3">
                 <label asp-for="Validade" class="control-label"></label>
-                <input asp-for="Validade" class="form-control" />
+                <input asp-for="Validade" class="form-control" readonly />
                 <span asp-validation-for="Validade" class="text-danger"></span>
             </div>    
     </div>
+    
+         <div class="d-grid gap-2 d-grid gap-2 mt-2"> 
+       
+             <input type="submit"  value="Save" id="btn" class="btn  text-white" style="background-color: #614ae7" /> 
 
-    <div class="d-grid gap-2 d-grid gap-2 mt-2"> 
-        <input type="submit"  value="Save" class="btn  text-white" style="background-color: #614ae7" />
-    </div>
+        </div>
 
     <div  class="d-grid gap-2 d-grid gap-2 mt-2">
         <a role="button" class="btn btn-danger" asp-action="Index"><strong>Voltar</strong></a>
@@ -52,4 +57,7 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    
 }
+
