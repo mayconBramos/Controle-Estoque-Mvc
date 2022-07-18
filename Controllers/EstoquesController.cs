@@ -95,20 +95,37 @@ namespace Controle_Estoque_Mvc.Controllers
             {
                 return NotFound();
             }
-
+            var qntd = estoque.Quantidade;
             if (ModelState.IsValid)
             {
                 
                 try
                 {
+                    
                     _context.Update(estoque);
                     await _context.SaveChangesAsync();
+                  
+
                     if (estoque.Quantidade <= 0)
                     {
                         _context.Remove(estoque);
                         await _context.SaveChangesAsync();
+                        TempData["MensagemSucesso"] = "Produto acabou e foi retirado com sucesso!";
                         return RedirectToAction(nameof(Index));
                     }
+
+                    if(estoque.Quantidade == 1)
+                    {
+                    TempData["MensagemSucesso"] = $"Resta apenas {estoque.Quantidade} produto desse lote!";
+
+                    }
+                    else if(estoque.Quantidade > 1)
+                    {
+                        TempData["MensagemSucesso"] = $"Restam apenas {estoque.Quantidade} produtos desse lote!";
+
+                    }
+
+
 
                 }
                 catch (DbUpdateConcurrencyException)

@@ -15,30 +15,41 @@
         </dt>
         <dd class = "col-sm-auto">
             @Html.DisplayFor(model => model.Lote)
+            @Html.ValidationMessageFor(x => x.Lote)
+
         </dd>
         <dt class = "col-sm-auto text-end">
             @Html.DisplayNameFor(model => model.NomeProduto)
         </dt>
         <dd class = "col-sm-auto">
             @Html.DisplayFor(model => model.NomeProduto)
+            @Html.ValidationMessageFor(x => x.NomeProduto)
+
         </dd>
         <dt class = "col-sm-auto text-end">
            <label>No estoque</label>
         </dt>
         <dd class = "col-sm-auto" id="qntdEstoque" >
             @Html.DisplayFor(model => model.Quantidade)
+            @Html.ValidationMessageFor(x => x.Quantidade)
+
         </dd>
         <dt class = "col-sm-auto text-end">
             @Html.DisplayNameFor(model => model.Recebimento)
+
         </dt>
         <dd class = "col-sm-auto">
             @Html.DisplayFor(model => model.Recebimento)
+            @Html.ValidationMessageFor(x => x.Recebimento)
+
         </dd>
         <dt class = "col-sm-auto text-end">
             @Html.DisplayNameFor(model => model.Validade)
         </dt>
         <dd class = "col-sm-auto">
             @Html.DisplayFor(model => model.Validade)
+            @Html.ValidationMessageFor(x => x.Validade)
+
         </dd>
     </dl>
    

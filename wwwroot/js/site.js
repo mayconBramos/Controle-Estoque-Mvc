@@ -8,14 +8,3 @@ $('.container').click(function () {
 })
 
 
-var qntdRetirar = document.getElementById('qntdRetirar').value;
-var qntdEstoque = document.getElementById('qntdEstoque').value;
-
-
-function sobra(int qntdRetirar, int qntdEstoque) {
-
-    if (qntdEstoque == qntdEstoque) {
-
-        document.getElementById('btn') = 
-        }
-}

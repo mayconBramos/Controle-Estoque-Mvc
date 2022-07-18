@@ -58,14 +58,24 @@ namespace Controle_Estoque_Mvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Entrada entrada, Estoque estoque)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _context.Add(entrada);
-                _context.Add(estoque);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _context.Add(entrada);
+                    _context.Add(estoque);
+                    await _context.SaveChangesAsync();
+                    TempData["MensagemSucesso"] = "Produto cadastrado com sucesso!";
+                    return RedirectToAction(nameof(Index));
+                }
+                return View(entrada);
             }
-            return View(entrada);
+            catch(Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, erro ao cadastrar o produto, tente novamente, erro: {erro} ";
+                return RedirectToAction(nameof(Index));
+
+            }
         }
 
         // GET: Entradas/Edit/5
@@ -91,34 +101,44 @@ namespace Controle_Estoque_Mvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Entrada entrada)
         {
-            if (id != entrada.Id)
+            try
             {
-                return NotFound();
+                if (id != entrada.Id)
+                {
+                    return NotFound();
+                }
+
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        _context.Update(entrada);
+                        await _context.SaveChangesAsync();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+                        if (!EntradaExists(entrada.Id))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
+                    }
+                    TempData["MensagemSucesso"] = "Produto atualizado com sucesso!";
+                    return RedirectToAction(nameof(Index));
+                }
+                return View(entrada);
+            
+            }
+            catch (Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, erro ao atualizar o produto, tente novamente, erro: {erro} ";
+                    return RedirectToAction(nameof(Index));
             }
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(entrada);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!EntradaExists(entrada.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(entrada);
         }
-
         // GET: Entradas/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
