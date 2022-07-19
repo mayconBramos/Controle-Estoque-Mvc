@@ -10,100 +10,99 @@ using GestaoEstoque.DataBase;
 
 namespace Controle_Estoque_Mvc.Controllers
 {
-    public class EntradasController : Controller
+    public class UsuariosController : Controller
     {
         private readonly Contexto _context;
 
-        public EntradasController(Contexto context)
+        public UsuariosController(Contexto context)
         {
             _context = context;
         }
 
-        // GET: Entradas
+        // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-              return _context.Entrada != null ? 
-                          View(await _context.Entrada.ToListAsync()) :
-                          Problem("Entity set 'Contexto.Entrada'  is null.");
+              return _context.Usuarios != null ? 
+                          View(await _context.Usuarios.ToListAsync()) :
+                          Problem("Entity set 'Contexto.Usuarios'  is null.");
         }
 
-        // GET: Entradas/Details/5
+        // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Entrada == null)
+            if (id == null || _context.Usuarios == null)
             {
                 return NotFound();
             }
 
-            var entrada = await _context.Entrada
+            var usuario = await _context.Usuarios
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (entrada == null)
+            if (usuario == null)
             {
                 return NotFound();
             }
 
-            return View(entrada);
+            return View(usuario);
         }
 
-        // GET: Entradas/Create
+        // GET: Usuarios/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Entradas/Create
+        // POST: Usuarios/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Entrada entrada, Estoque estoque)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Login,Email,Perfil,Senha,DataCadastro,DataAtualizacao")] Usuario usuario)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _context.Add(entrada);
-                    _context.Add(estoque);
+                    _context.Add(usuario);
+                    usuario.DataCadastro = DateTime.Now;
                     await _context.SaveChangesAsync();
-                    TempData["MensagemSucesso"] = "Produto cadastrado com sucesso!";
+                    TempData["MensagemSucesso"] = "Usuário cadastrado com sucesso!";
+
                     return RedirectToAction(nameof(Index));
                 }
-                return View(entrada);
+                return View(usuario);
             }
             catch(Exception erro)
             {
-                TempData["MensagemErro"] = $"Ops, erro ao cadastrar o produto, tente novamente, erro: {erro} ";
+                TempData["MensagemErro"] = $"Ops, erro ao cadastrar o usuário, tente novamente, erro: {erro} ";
                 return RedirectToAction(nameof(Index));
-
             }
         }
 
-        // GET: Entradas/Edit/5
+        // GET: Usuarios/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Entrada == null)
+            if (id == null || _context.Usuarios == null)
             {
                 return NotFound();
             }
 
-            var entrada = await _context.Entrada.FindAsync(id);
-            if (entrada == null)
+            var usuario = await _context.Usuarios.FindAsync(id);
+            if (usuario == null)
             {
                 return NotFound();
             }
-            return View(entrada);
+            return View(usuario);
         }
 
-        // POST: Entradas/Edit/5
+        // POST: Usuarios/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Entrada entrada)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nome,Login,Email,Perfil,Senha,DataCadastro,DataAtualizacao")] Usuario usuario)
         {
-            try
-            {
-                if (id != entrada.Id)
+            try { 
+                if (id != usuario.Id)
                 {
                     return NotFound();
                 }
@@ -112,7 +111,8 @@ namespace Controle_Estoque_Mvc.Controllers
                 {
                     try
                     {
-                        _context.Update(entrada);
+                        usuario.DataAtualizacao = DateTime.Now;
+                        _context.Update(usuario);
                         await _context.SaveChangesAsync();
                         TempData["MensagemSucesso"] = "Produto atualizado com sucesso!";
 
@@ -121,7 +121,7 @@ namespace Controle_Estoque_Mvc.Controllers
                     {
                         TempData["MensagemErro"] = $"Ops, erro ao atualizar o usuário, tente novamente, erro: {erro} ";
 
-                        if (!EntradaExists(entrada.Id))
+                        if (!UsuarioExists(usuario.Id))
                         {
                             return NotFound();
                         }
@@ -132,59 +132,56 @@ namespace Controle_Estoque_Mvc.Controllers
                     }
                     return RedirectToAction(nameof(Index));
                 }
-                return View(entrada);
-            
+                return View(usuario);
             }
             catch (Exception erro)
             {
                 TempData["MensagemErro"] = $"Ops, erro ao atualizar o produto, tente novamente, erro: {erro} ";
-                    return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index));
             }
-
         }
-        // GET: Entradas/Delete/5
+
+
+        // GET: Usuarios/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Entrada == null)
+            if (id == null || _context.Usuarios == null)
             {
                 return NotFound();
             }
 
-            var entrada = await _context.Entrada
+            var usuario = await _context.Usuarios
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (entrada == null)
+            if (usuario == null)
             {
                 return NotFound();
             }
 
-            return View(entrada);
+            return View(usuario);
         }
 
-        // POST: Entradas/Delete/5
+        // POST: Usuarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Entrada == null)
+            if (_context.Usuarios == null)
             {
-                return Problem("Entity set 'Contexto.Entrada'  is null.");
+                return Problem("Entity set 'Contexto.Usuarios'  is null.");
             }
-            var entrada = await _context.Entrada.FindAsync(id);
-            var estoque = await _context.Estoque.FindAsync(id);
-            if (entrada != null)
+            var usuario = await _context.Usuarios.FindAsync(id);
+            if (usuario != null)
             {
-                _context.Entrada.Remove(entrada);
-                if(estoque != null) { _context.Estoque.Remove(estoque); }
-                
+                _context.Usuarios.Remove(usuario);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EntradaExists(int id)
+        private bool UsuarioExists(int id)
         {
-          return (_context.Entrada?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Usuarios?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

@@ -1,0 +1,81 @@
+﻿@model Controle_Estoque_Mvc.Models.Usuario
+
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<h3 class="text-center">Tem certeza de que deseja excluir esse produto?</h3>
+<div>
+<hr />
+    <dl class="row" style="margin-left:50px;margin-right:50px">
+        <dt class = "col-sm-auto text-end">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-auto">
+            @Html.DisplayFor(model => model.Nome)
+            @Html.ValidationMessageFor(x => x.Nome)
+
+        </dd>
+        <dt class = "col-sm-auto text-end">
+            @Html.DisplayNameFor(model => model.Login)
+        </dt>
+        <dd class = "col-sm-auto">
+            @Html.DisplayFor(model => model.Login)
+            @Html.ValidationMessageFor(x => x.Login)
+
+        </dd>
+        <dt class = "col-sm-auto text-end">
+           @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-auto" id="qntdEstoque" >
+            @Html.DisplayFor(model => model.Email)
+            @Html.ValidationMessageFor(x => x.Email)
+
+        </dd>
+        <dt class = "col-sm-auto text-end">
+            @Html.DisplayNameFor(model => model.Perfil)
+
+        </dt>
+        <dd class = "col-sm-auto">
+            @Html.DisplayFor(model => model.Perfil)
+            @Html.ValidationMessageFor(x => x.Perfil)
+
+        </dd>
+        <dt class = "col-sm-auto text-end">
+            @Html.DisplayNameFor(model => model.Senha)
+        </dt>
+        <dd class = "col-sm-auto">
+            @Html.DisplayFor(model => model.Senha)
+            @Html.ValidationMessageFor(x => x.Senha)
+
+        </dd>
+         <dt class = "col-sm-auto text-end">
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </dt>
+        <dd class = "col-sm-auto">
+            @Html.DisplayFor(model => model.DataCadastro)
+            @Html.ValidationMessageFor(x => x.DataCadastro)
+
+        </dd>
+         <dt class = "col-sm-auto text-end">
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </dt>
+        <dd class = "col-sm-auto">
+            @Html.DisplayFor(model => model.DataCadastro)
+            @Html.ValidationMessageFor(x => x.DataCadastro)
+
+        </dd>
+    </dl>
+   
+       <form asp-action="Delete" >
+            <div class="d-grid gap-2 d-grid gap-2 mt-2"> 
+                <input type="hidden" asp-for="Id"/>
+                <input type="submit" value="Confirmar" class="btn text-white" style="background-color:#7b67eb";/> 
+                <a role="button" class="btn btn-danger" asp-action="Index"><strong>Voltar</strong></a>
+            </div>
+       </form>
+    </dl>
+    
+</div>

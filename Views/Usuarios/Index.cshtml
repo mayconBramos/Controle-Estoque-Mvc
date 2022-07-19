@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Controle_Estoque_Mvc.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index Usuario";
+}
+
+@if(TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success mt-2" role="alert">
+        @TempData["MensagemSucesso"]
+    </div>
+}
+
+@if(TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger mt-2" role="alert">
+    < type="button"  class="btn btn-danger btn-sm close-alert" aria-label="Cose">X</>
+    @TempData["MensagemErro"]
+</div>
+
+}
+
+
+<h1 class="text-center mt-4">Usuários cadastrados</h1>
+
+<p>
+    <a role="button" class="btn col-12 text-white" asp-controller="Usuarios" asp-action="Create" style="background-color: #7b67eb"><strong>Adicionar novo usuário</strong> </a>
+</p>
+<hr />
+
+<table class="table" id="tabela_usuario">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Login)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Perfil)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Senha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataCadastro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataAtualizacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                 @(item.Perfil == Controle_Estoque_Mvc.Enums.PerfilEnum.Admin ? "Administrador" : "Padrão")
+            </td>   
+            <td>
+                @Html.DisplayFor(modelItem => item.Senha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataCadastro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAtualizacao)
+            </td>
+            <td>
+                <a role="button" class="btn btn-outline-primary px-2 py-1" asp-action="Edit" asp-route-id="@item.Id">Editar</a> 
+                <a role="button" class="btn btn-outline-danger  px-2 py-1" asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@section Scripts{
+    <script>
+        $(document).ready( function () {
+
+            $('#tabela_usuario').DataTable({
+
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+                }
+
+            }); 
+                
+    } );
+    </script>
+}
+
