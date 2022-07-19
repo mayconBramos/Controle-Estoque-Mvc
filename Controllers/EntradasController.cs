@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Controle_Estoque_Mvc.Models;
-using GestaoEstoque.DataBase;
+using Gestao_Estoque_Mvc.Data;
+using Gestao_Estoque_Mvc.Models;
 
-namespace Controle_Estoque_Mvc.Controllers
+namespace Gestao_Estoque_Mvc.Controllers
 {
     public class EntradasController : Controller
     {
@@ -22,9 +22,9 @@ namespace Controle_Estoque_Mvc.Controllers
         // GET: Entradas
         public async Task<IActionResult> Index()
         {
-              return _context.Entrada != null ? 
-                          View(await _context.Entrada.ToListAsync()) :
-                          Problem("Entity set 'Contexto.Entrada'  is null.");
+            return _context.Entrada != null ?
+                        View(await _context.Entrada.ToListAsync()) :
+                        Problem("Entity set 'Contexto.Entrada'  is null.");
         }
 
         // GET: Entradas/Details/5
@@ -56,21 +56,21 @@ namespace Controle_Estoque_Mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Entrada entrada, Estoque estoque)
+        public async Task<IActionResult> Create([Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Entrada entrada, Produto produto)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
                     _context.Add(entrada);
-                    _context.Add(estoque);
+                    _context.Add(produto);
                     await _context.SaveChangesAsync();
                     TempData["MensagemSucesso"] = "Produto cadastrado com sucesso!";
                     return RedirectToAction(nameof(Index));
                 }
                 return View(entrada);
             }
-            catch(Exception erro)
+            catch (Exception erro)
             {
                 TempData["MensagemErro"] = $"Ops, erro ao cadastrar o produto, tente novamente, erro: {erro} ";
                 return RedirectToAction(nameof(Index));
@@ -133,12 +133,12 @@ namespace Controle_Estoque_Mvc.Controllers
                     return RedirectToAction(nameof(Index));
                 }
                 return View(entrada);
-            
+
             }
             catch (Exception erro)
             {
                 TempData["MensagemErro"] = $"Ops, erro ao atualizar o produto, tente novamente, erro: {erro} ";
-                    return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index));
             }
 
         }
@@ -170,21 +170,21 @@ namespace Controle_Estoque_Mvc.Controllers
                 return Problem("Entity set 'Contexto.Entrada'  is null.");
             }
             var entrada = await _context.Entrada.FindAsync(id);
-            var estoque = await _context.Estoque.FindAsync(id);
+            var estoque = await _context.Produtos.FindAsync(id);
             if (entrada != null)
             {
                 _context.Entrada.Remove(entrada);
-                if(estoque != null) { _context.Estoque.Remove(estoque); }
-                
+                if (estoque != null) { _context.Produtos.Remove(estoque); }
+
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool EntradaExists(int id)
         {
-          return (_context.Entrada?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Entrada?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

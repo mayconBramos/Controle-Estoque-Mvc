@@ -1,0 +1,47 @@
+﻿@model Gestao_Estoque_Mvc.Models.Clientes
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3 class="text-center">Tem certeza de que deseja excluir esse cliente?</h3>
+<div>
+<hr />
+    <dl class="row " >
+        <dt class = "col-sm-auto text-end">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-auto">
+            @Html.DisplayFor(model => model.Nome)
+            @Html.ValidationMessageFor(x => x.Nome)
+
+        </dd>
+        <dt class = "col-sm-auto text-end">
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+        <dd class = "col-sm-auto ">
+            @Html.DisplayFor(model => model.Telefone)
+            @Html.ValidationMessageFor(x => x.Telefone)
+
+        </dd>
+        <dt class = "col-sm-auto text-end">
+           @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+        <dd class = "col-sm-auto" id="qntdEstoque" >
+            @Html.DisplayFor(model => model.Endereco)
+            @Html.ValidationMessageFor(x => x.Endereco)
+
+        </dd>
+        
+    </dl>
+   
+       <form asp-action="Delete" >
+            <div class="d-grid gap-2 d-grid gap-2 mt-2"> 
+                <input type="hidden" asp-for="Id"/>
+                <input type="submit" value="Confirmar" class="btn text-white" style="background-color:#7b67eb";/> 
+                <a role="button" class="btn btn-danger" asp-action="Index"><strong>Voltar</strong></a>
+            </div>
+       </form>
+    
+    
+</div>

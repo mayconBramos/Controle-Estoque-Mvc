@@ -1,0 +1,53 @@
+﻿@model Gestao_Estoque_Mvc.Models.Clientes
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h1 class=" text-center">Clientes</h1>
+
+
+<hr />
+<form asp-action="Create">
+    <div class="row ">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group col-5 ">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group col-5 ms-auto">
+                <label asp-for="Telefone" class="control-label"></label>
+                <input type="tel" asp-for="Telefone" class="form-control" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+           
+    </div>
+    <div class="row">
+
+            <div class="form-group col-8 ">
+                <label asp-for="Endereco" class="control-label"></label>
+                <input  asp-for="Endereco" class="form-control" />
+                <span asp-validation-for="Endereco" class="text-danger"></span>
+            </div>
+          
+    </div>
+
+    <div class="d-grid gap-2 mt-3">   
+        <input type="submit" value="Confirmar" class="btn  text-white" style="background-color:#7b67eb"; />
+    </div>
+
+    <div  class="d-grid gap-2 d-grid gap-2 mt-2">
+    <a role="button" class="btn btn-danger" asp-action="Index"><strong>Voltar</strong></a>
+    </div>
+</form>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

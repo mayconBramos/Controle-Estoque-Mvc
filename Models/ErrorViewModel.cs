@@ -1,4 +1,4 @@
-namespace Controle_Estoque_Mvc.Models
+namespace Gestao_Estoque_Mvc.Models
 {
     public class ErrorViewModel
     {

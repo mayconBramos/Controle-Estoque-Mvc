@@ -1,8 +1,8 @@
-﻿using Controle_Estoque_Mvc.Models;
+﻿using Gestao_Estoque_Mvc.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Controle_Estoque_Mvc.Controllers
+namespace Gestao_Estoque_Mvc.Controllers
 {
     public class HomeController : Controller
     {
