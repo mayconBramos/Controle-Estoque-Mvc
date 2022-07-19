@@ -520,3 +520,14 @@ C:\Users\mbrun\OneDrive\Área de Trabalho\Conteudos Progamador\Portifolio Github
 C:\Users\mbrun\OneDrive\Área de Trabalho\Conteudos Progamador\Portifolio Github\Controle-Estoque-Mvc\obj\Debug\net6.0\ControleEstoque.pdb
 C:\Users\mbrun\OneDrive\Área de Trabalho\Conteudos Progamador\Portifolio Github\Controle-Estoque-Mvc\obj\Debug\net6.0\ControleEstoque.genruntimeconfig.cache
 C:\Users\mbrun\OneDrive\Área de Trabalho\Conteudos Progamador\Portifolio Github\Controle-Estoque-Mvc\obj\Debug\net6.0\ref\ControleEstoque.dll
+C:\Users\mbrun\OneDrive\Área de Trabalho\Controle-Estoque-Mvc\obj\Debug\net6.0\ControleEstoque.csproj.AssemblyReference.cache
+C:\Users\mbrun\OneDrive\Área de Trabalho\Controle-Estoque-Mvc\obj\Debug\net6.0\ControleEstoque.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mbrun\OneDrive\Área de Trabalho\Controle-Estoque-Mvc\obj\Debug\net6.0\ControleEstoque.AssemblyInfoInputs.cache
+C:\Users\mbrun\OneDrive\Área de Trabalho\Controle-Estoque-Mvc\obj\Debug\net6.0\ControleEstoque.AssemblyInfo.cs
+C:\Users\mbrun\OneDrive\Área de Trabalho\Controle-Estoque-Mvc\obj\Debug\net6.0\ControleEstoque.csproj.CoreCompileInputs.cache
+C:\Users\mbrun\OneDrive\Área de Trabalho\Controle-Estoque-Mvc\obj\Debug\net6.0\ControleEstoque.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mbrun\OneDrive\Área de Trabalho\Controle-Estoque-Mvc\obj\Debug\net6.0\ControleEstoque.RazorAssemblyInfo.cache
+C:\Users\mbrun\OneDrive\Área de Trabalho\Controle-Estoque-Mvc\obj\Debug\net6.0\ControleEstoque.RazorAssemblyInfo.cs
+C:\Users\mbrun\OneDrive\Área de Trabalho\Controle-Estoque-Mvc\obj\Debug\net6.0\ControleEstoque.dll
+C:\Users\mbrun\OneDrive\Área de Trabalho\Controle-Estoque-Mvc\obj\Debug\net6.0\refint\ControleEstoque.dll
+C:\Users\mbrun\OneDrive\Área de Trabalho\Controle-Estoque-Mvc\obj\Debug\net6.0\ControleEstoque.pdb

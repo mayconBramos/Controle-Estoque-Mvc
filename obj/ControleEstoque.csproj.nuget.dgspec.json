@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Portifolio Github\\Controle-Estoque-Mvc\\ControleEstoque.csproj": {}
+    "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Controle-Estoque-Mvc\\ControleEstoque.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Portifolio Github\\Controle-Estoque-Mvc\\ControleEstoque.csproj": {
+    "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Controle-Estoque-Mvc\\ControleEstoque.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Portifolio Github\\Controle-Estoque-Mvc\\ControleEstoque.csproj",
+        "projectUniqueName": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Controle-Estoque-Mvc\\ControleEstoque.csproj",
         "projectName": "ControleEstoque",
-        "projectPath": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Portifolio Github\\Controle-Estoque-Mvc\\ControleEstoque.csproj",
+        "projectPath": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Controle-Estoque-Mvc\\ControleEstoque.csproj",
         "packagesPath": "C:\\Users\\mbrun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Portifolio Github\\Controle-Estoque-Mvc\\obj\\",
+        "outputPath": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Controle-Estoque-Mvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mbrun\\AppData\\Roaming\\NuGet\\NuGet.Config",
