@@ -8,97 +8,97 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Gestao_Estoque_Mvc
 build_property.RootNamespace = Gestao_Estoque_Mvc
-build_property.ProjectDir = C:\Users\mbrun\OneDrive\Área de Trabalho\Conteudos Progamador\Academia-NET\Desafio_Avaliativos\Gestao_Estoque_Mvc\
+build_property.ProjectDir = C:\Users\mbrun\OneDrive\Área de Trabalho\Conteudos Progamador\Portifolio Github\Controle-Estoque-Mvc\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\mbrun\OneDrive\Área de Trabalho\Conteudos Progamador\Academia-NET\Desafio_Avaliativos\Gestao_Estoque_Mvc
+build_property.MSBuildProjectDirectory = C:\Users\mbrun\OneDrive\Área de Trabalho\Conteudos Progamador\Portifolio Github\Controle-Estoque-Mvc
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Clientes/Create.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Clientes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Clientes/Delete.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Clientes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Clientes/Details.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Clientes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Clientes/Edit.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Clientes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Clientes/Index.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Clientes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Entradas/Create.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Entradas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cmFkYXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Entradas/Delete.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Entradas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cmFkYXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Entradas/Details.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Entradas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cmFkYXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Entradas/Edit.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Entradas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cmFkYXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Entradas/Index.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Entradas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50cmFkYXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Home/Index.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Home/Privacy.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Produtos/Create.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Produtos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Produtos/Delete.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Produtos/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Produtos/Details.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Produtos/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Produtos/Edit.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Produtos/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Produtos/Index.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Produtos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Shared/Error.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/_ViewImports.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/_ViewStart.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Academia-NET/Desafio_Avaliativos/Gestao_Estoque_Mvc/Views/Shared/_Layout.cshtml]
+[C:/Users/mbrun/OneDrive/Área de Trabalho/Conteudos Progamador/Portifolio Github/Controle-Estoque-Mvc/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-s3kwfcukc6

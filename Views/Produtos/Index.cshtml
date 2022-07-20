@@ -4,16 +4,17 @@
     ViewData["Title"] = "Index";
 }
 
+<!--pagina principal onde mostra as listas-->
 @if(TempData["MensagemSucesso"] != null)
 {
-    <div class="alert alert-success mt-2" role="alert">
+    <div class="alert alert-success  mt-2" role="alert">
         @TempData["MensagemSucesso"]
     </div>
 }
 
 @if(TempData["MensagemErro"] != null)
 {
-    <div class="alert alert-danger mt-2" role="alert">
+    <div class="alert alert-danger close-alert mt-2" role="alert">
     < type="button"  class="btn btn-danger btn-sm close-alert" aria-label="Cose">X</>
     @TempData["MensagemErro"]
 </div>

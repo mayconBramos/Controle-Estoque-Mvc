@@ -60,10 +60,14 @@ namespace Gestao_Estoque_Mvc.Controllers
         {
             if (ModelState.IsValid)
             {
+                //Adiciona tabela
                 _context.Add(clientes);
                 await _context.SaveChangesAsync();
+                TempData["MensagemSucesso"] = "Cliente cadastrado com sucesso!";
+
                 return RedirectToAction(nameof(Index));
             }
+
             return View(clientes);
         }
 
@@ -101,9 +105,12 @@ namespace Gestao_Estoque_Mvc.Controllers
                 {
                     _context.Update(clientes);
                     await _context.SaveChangesAsync();
+                    TempData["MensagemSucesso"] = "Cliente atualizado com sucesso!";
+
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (DbUpdateConcurrencyException erro)
                 {
+
                     if (!ClientesExists(clientes.Id))
                     {
                         return NotFound();
@@ -152,6 +159,8 @@ namespace Gestao_Estoque_Mvc.Controllers
             }
             
             await _context.SaveChangesAsync();
+            TempData["MensagemSucesso"] = "Cliente apagado com sucesso!";
+
             return RedirectToAction(nameof(Index));
         }
 

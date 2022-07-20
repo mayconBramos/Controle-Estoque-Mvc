@@ -63,6 +63,7 @@ namespace Gestao_Estoque_Mvc.Controllers
                 if (ModelState.IsValid)
                 {
                     _context.Add(entrada);
+                    //Adiciona tambem na tabela produto
                     _context.Add(produto);
                     await _context.SaveChangesAsync();
                     TempData["MensagemSucesso"] = "Produto cadastrado com sucesso!";
@@ -119,7 +120,7 @@ namespace Gestao_Estoque_Mvc.Controllers
                     }
                     catch (DbUpdateConcurrencyException erro)
                     {
-                        TempData["MensagemErro"] = $"Ops, erro ao atualizar o usuário, tente novamente, erro: {erro} ";
+                        TempData["MensagemErro"] = $"Ops, erro ao atualizar o produto, tente novamente, erro: {erro} ";
 
                         if (!EntradaExists(entrada.Id))
                         {
@@ -174,11 +175,14 @@ namespace Gestao_Estoque_Mvc.Controllers
             if (entrada != null)
             {
                 _context.Entrada.Remove(entrada);
+
+                //Remove tambem na tabela produto
                 if (estoque != null) { _context.Produtos.Remove(estoque); }
 
             }
 
             await _context.SaveChangesAsync();
+            TempData["MensagemSucesso"] = "Produto apagado com sucesso!";
             return RedirectToAction(nameof(Index));
         }
 
