@@ -2,4 +2,4 @@
 Projeto final - Academia Atos .Net
 
 
-*Controle de estoque com lote e validade.
+-Controle de estoque com lote e validade.
