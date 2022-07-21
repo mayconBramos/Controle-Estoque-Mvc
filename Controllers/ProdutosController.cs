@@ -95,6 +95,7 @@ namespace Gestao_Estoque_Mvc.Controllers
             {
                 return NotFound();
             }
+            // pegando a quantidade que resta no estoque
             var qntd = estoque.Quantidade;
             if (ModelState.IsValid)
             {
@@ -105,7 +106,7 @@ namespace Gestao_Estoque_Mvc.Controllers
                     _context.Update(estoque);
                     await _context.SaveChangesAsync();
 
-
+                    // apaga produto caso o estoque tenha zerado 
                     if (estoque.Quantidade <= 0)
                     {
                         _context.Remove(estoque);
@@ -113,12 +114,13 @@ namespace Gestao_Estoque_Mvc.Controllers
                         TempData["MensagemSucesso"] = "Produto acabou e foi retirado com sucesso!";
                         return RedirectToAction(nameof(Index));
                     }
-
+                    // mensagem de quantidade restante
                     if (estoque.Quantidade == 1)
                     {
                         TempData["MensagemSucesso"] = $"Resta apenas {estoque.Quantidade} produto desse lote!";
 
                     }
+                    // mensagem de quantidade restante plural
                     else if (estoque.Quantidade > 1)
                     {
                         TempData["MensagemSucesso"] = $"Restam apenas {estoque.Quantidade} produtos desse lote!";

@@ -9471,11 +9471,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Academia-NET\\Desafio_Avaliativos\\Gestao_Estoque_Mvc\\Gestao_Estoque_Mvc.csproj",
+      "projectUniqueName": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Portifolio Github\\Controle-Estoque-Mvc\\Gestao_Estoque_Mvc.csproj",
       "projectName": "Gestao_Estoque_Mvc",
-      "projectPath": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Academia-NET\\Desafio_Avaliativos\\Gestao_Estoque_Mvc\\Gestao_Estoque_Mvc.csproj",
+      "projectPath": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Portifolio Github\\Controle-Estoque-Mvc\\Gestao_Estoque_Mvc.csproj",
       "packagesPath": "C:\\Users\\mbrun\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Academia-NET\\Desafio_Avaliativos\\Gestao_Estoque_Mvc\\obj\\",
+      "outputPath": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Portifolio Github\\Controle-Estoque-Mvc\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mbrun\\AppData\\Roaming\\NuGet\\NuGet.Config",

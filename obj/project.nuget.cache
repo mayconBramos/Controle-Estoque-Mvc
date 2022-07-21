@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ghj6O04Y4q/fBOYxRkDhveM2QSfuousm91Q1JGTgv8zIgaRpIB2EdYC3QsuATA6pt9sDk6BOKtJi1L8SX8vwhg==",
+  "dgSpecHash": "mmtHxcBJyq5p87ieJcG+Pq7rPVbR82uLXCosahvfx5XvEjIBqT+np3Em0tFskaVqjI2N8jUO6k1yxIQzxu2QBw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Academia-NET\\Desafio_Avaliativos\\Gestao_Estoque_Mvc\\Gestao_Estoque_Mvc.csproj",
+  "projectFilePath": "C:\\Users\\mbrun\\OneDrive\\Área de Trabalho\\Conteudos Progamador\\Portifolio Github\\Controle-Estoque-Mvc\\Gestao_Estoque_Mvc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mbrun\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\mbrun\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

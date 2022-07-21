@@ -100,7 +100,7 @@ namespace Gestao_Estoque_Mvc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Entrada entrada)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Lote,NomeProduto,Quantidade,Recebimento,Validade")] Entrada entrada, Produto estoque)
         {
             try
             {
@@ -109,13 +109,37 @@ namespace Gestao_Estoque_Mvc.Controllers
                     return NotFound();
                 }
 
+                // pegando a quantidade que resta no estoque
+                var qntd = entrada.Quantidade;
+
                 if (ModelState.IsValid)
                 {
                     try
                     {
                         _context.Update(entrada);
+                        _context.Update(estoque);
                         await _context.SaveChangesAsync();
-                        TempData["MensagemSucesso"] = "Produto atualizado com sucesso!";
+                        
+                        // apaga produto caso o estoque tenha zerado 
+                        if (estoque.Quantidade <= 0)
+                        {
+                            _context.Remove(entrada);
+                            _context.Remove(estoque);
+                            await _context.SaveChangesAsync();
+                            TempData["MensagemSucesso"] = "Produto foi  retirado com sucesso!";
+                            return RedirectToAction(nameof(Index));
+                        }
+
+                        // mensagem de quantidade restante
+                        if (estoque.Quantidade == 1)
+                        {
+                            TempData["MensagemSucesso"] = "Produto atualizado com sucesso!";
+                        }
+                        // mensagem de quantidade restante plural
+                        else if (estoque.Quantidade > 1)
+                        {
+                            TempData["MensagemSucesso"] = "Produto atualizado com sucesso!";
+                        }
 
                     }
                     catch (DbUpdateConcurrencyException erro)
